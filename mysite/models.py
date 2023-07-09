@@ -6,3 +6,4 @@ class MainContent(models.Model):
     title=models.CharField(max_length=200)
     content=models.TextField()
     pub_date=models.DateTimeField('date published')
+    username=models.CharField(max_length=100)

@@ -1,10 +1,50 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>login</title>
-</head>
-<body>
-<h1>login</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>login</title>
+        <link href="{% static 'login.css' %}" rel="stylesheet">
+        <link href="{% static 'styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <center>
+             <div class="login-wrapper">
+            <div class="image" style="background: #BDBDBD;">
+                <img class="profile" >
+            </div>
+            <form method="post" action="서버의url" id="login-form">
+                <input type="text" name="userName" placeholder="Email">
+                <input type="password" name="userPassword" placeholder="Passord">
+
+                <input type="submit" value="로그인">
+
+                <div class="login-button" aria-orientation="horizontal">
+                    <input type="button" value="비번 찾기">
+                    <input type="button" value="회원가입">
+                </div>
+
+            </form>
+
+        </div>
+        </center>
+
+
+
+
+
+
+
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+            <div class="container"><p class="m-0 text-center text-white">대표 이메일 : 123@gmail.com</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+    </body>
 </html>
