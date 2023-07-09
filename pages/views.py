@@ -19,8 +19,7 @@ def brand_ph(request):
     return render(request, 'pages/brand_ph.html')
 def brand_cs(request):
     return render(request, 'pages/brand_cs.html')
-def login(request):
-    return render(request, 'pages/login.html')
+
 def login_signup(request):
     return render(request, 'pages/signup.html')
 
