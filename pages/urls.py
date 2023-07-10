@@ -31,6 +31,6 @@ urlpatterns = [
     path('brand/ph/', views.brand_ph),
     path('brand/cs/', views.brand_cs),
 
-    path('login/signup/', views.login_signup),
+
     path('login/password_reset/', views.login_password_reset),
 ]

@@ -1,23 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>메인 페이지</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mainpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-    <ul>
-        <li><a href="/company/">company info</a></li>
-        <li> <a href="/mysite/">product</a></li>
-        <li><a href="/productlist/">productlist</a></li>
-        <li><a href="/productlist/detail/">상품 상세</a> </li>
-        <li><a href="/brand/">brand</a> </li>
-        <li><a href="/brand/ph/">brand_ph</a> </li>
-        <li><a href="/brand/cs/">brand_cs</a></li>
-        <li><a href="/login/">login</a></li>
-          <li><a href="/login/signup/">signup</a></li>
-          <li><a href="/login/password_reset/">password_reseet</a></li>
-    </ul>
+<!--navigation-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand" href="/">Brand Image</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg bg-dark ">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active text-white"
+                                        href="/productlist/">제품</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/brand/">브랜드</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav mb-2 mb-lg-0">
 
-<h1>메인 페이지입니다.</h1>
+                <li class="nav-item">
+                    <p>
+                        {% if user.is_authenticated %}
+                        <a class="nav-link active text-white" href="/accounts/logout/">로그아웃</a>
+                        {% else %}
+                        <a class="nav-link active text-white" href="/accounts/login/">로그인</a>
+                        {% endif %}
+
+                    </p>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+
+
+<!--Page Content-->
+<div class="container px-4 px-lg-5">
+    <!--Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner" style=" height: 400px;">
+                <div class="carousel-item active">
+                    <img src="https://newstarthomesep.com/document/images/slick-carousel/slider-04.jpg"
+                         class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://newstarthomesep.com/document/images/slick-carousel/slider-05.jpg"
+                         class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://newstarthomesep.com/document/images/slick-carousel/slider-06.jpg"
+                         class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Call to Action-->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some
+            important information or display a clever tagline!</p></div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Card One</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                        numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Card Two</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus
+                        at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates
+                        quos eligendi labore.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Card Three</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                        numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ul>
+    <li><a href="/company/">company info</a></li>
+    <li><a href="/mysite/">product</a></li>
+    <li><a href="/productlist/">productlist</a></li>
+    <li><a href="/productlist/detail/">상품 상세</a></li>
+    <li><a href="/brand/">brand</a></li>
+    <li><a href="/brand/ph/">brand_ph</a></li>
+    <li><a href="/brand/cs/">brand_cs</a></li>
+    <li><a href="/accounts/login/">login</a></li>
+    <li><a href="/accounts/signup/">signup</a></li>
+    <li><a href="/login/password_reset/">password_reseet</a></li>
+</ul>
+
+
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        <p class="m-0 text-center text-white">대표이메일 123@gamil.com</p>
+    </div>
+</footer>
+
+
 </body>
 </html>
