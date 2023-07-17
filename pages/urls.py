@@ -25,12 +25,5 @@ from . import views
 urlpatterns = [
     path('', views.mainpage),
     path('company/', views.company),
-    path('productlist/', views.productlist),
-    path('productlist/detail/', views.productlist_detail),
-    path('brand/', views.brand),
-    path('brand/ph/', views.brand_ph),
-    path('brand/cs/', views.brand_cs),
 
-
-    path('login/password_reset/', views.login_password_reset),
 ]

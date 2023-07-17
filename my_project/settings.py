@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # local apps
     'mysite',
     'pages',
-    'accounts',
+    'accounts.apps.AccountsConfig',
 
 ]
 
@@ -133,3 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 로그인 후에 이동할 주소
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

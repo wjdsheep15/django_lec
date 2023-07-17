@@ -1,65 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-</head>
-<body class=" d-flex flex-column min-vh-100 ">
+{% extends "base.html" %}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+{% block content %}
 
-<!--page conent-->
+{% if form.errors %}
+<p>아이디 또는 비밀번호가 틀립니다. 다시 시도해주세요</p>
+{% endif %}
 
-<div class="wrapper mt-auto" style=" line-height: 50px;">
-    <div style="text-align: center;">
-        {% block content %}
+<form method="post" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
 
-        <h1>Brand Image</h1>
-        <form method="post" action="">
-            {% csrf_token %}
+    </table>
+    <input type="submit" value="login">
 
-
-
-            <div class="mt-5">
-                <label>사용자 ID</label>
-                <input type="text" class="form-control mx-auto" name="username" id="username" style="width:350px;">
-
-            </div>
-            <div>
-                <label>비밀번호</label>
-                <input type="password" class="form-control mx-auto" name="password" id="password" style="width: 350px;">
-            </div>
-            {% include 'accounts/form_errors.html' %}
-            <button class="btn btn-outline-dark mt-5" type="submit" style="width: 350px;">로그인</button>
-
-            <div class="row mx-auto mt-2" style="width: 400px;">
-                <div class="col">
-                    <a class="btn btn-outline-dark" href="/" role="button" style="width:150px;">뒤돌아가기</a>
-                </div>
-                <div class="col">
-                    <a class="btn btn-outline-dark" href="../signup/" role="button" style="width:150px;">회원가입</a>
-                </div>
-            </div>
-
-        </form>
-        {% endblock %}
-    </div>
-</div>
-
-
-<!-- Footer-->
-
-<footer class=" mt-auto py-5 bg-dark">
-    <div class="container px-4 px-lg-5">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
-        <p class="m-0 text-center text-white">대표이메일 123@gamil.com</p>
-    </div>
-</footer>
-
-</body>
-</html>
+</form>
+<a href="{% url 'accounts:signup' %}">signup</a>
+{% endblock %}
