@@ -1,2 +1,4 @@
 # django_lec
-django project
+## 개발환경
+
+PyCharm
